@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href={% url "index" %} class=" navbar-brand"><i class="fa fa-clock-o fa-lg"></i> movie</a>
+            </div>
+            <div class="navbar-right">
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button"
+                                aria-expanded="false"> Navigation <i class="fa fa-caret-down"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href={% url "index" %}>HOME</a></li>
+                                <li><a href={% url "register" %}>REGISTER</a></li>
+                                <li><a href={% url "h" %}>MOVIES</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <!--/.navbar-right -->
+        </div>
+    </nav>
+    <br><br>
+    <h1>Recommended movies</h1>
+
+    {% for movie in movies %}
+    <h2>{{ movie }}</h2>
+    {% endfor %}
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
